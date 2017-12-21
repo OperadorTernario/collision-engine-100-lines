@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collision Engine</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="p1" class="particle" style="left: 100px; top: 200px; background: rgb(0,150,200)"></div>
+	<div id="p2" class="particle" style="left: 300px; top: 200px; background: rgb(0,150,200)"></div>
+	
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var p1 = document.querySelector("#p1");
+			var p2 = document.querySelector("#p2");
+
+			// order of p1, p2 is essential
+			draggable(p1, function() { return !collision(p1,p2); });
+			draggable(p2, function() { return !collision(p2,p1); });
+		}
+	</script>
+</body>
+</html>
